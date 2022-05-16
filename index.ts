@@ -18,7 +18,7 @@ app.use(express.json())
 
 mongoose.connect( process.env.MONGODB_URI, {useNewUrlParser: true} )
     .then(() => console.log("DB Connection Successful !"))
-    .catch((err) => console.log(err))
+    .catch((err: any) => console.log(err))
 
 app.use('/api/users', userRoute)
 
