@@ -6,7 +6,7 @@ const bcrypt = require("bcryptjs");
 const router = express.Router();
 const User = require("../models/user");
 
-router.post("/sign-up", async (req: any, res: Response) => {
+router.post("/sign-up", async (req: any, res: Response) : Promise<any> => {
   const { first_name, last_name, pseudo, email, password } = req.body;
   try {
     let user = await User.findOne({
