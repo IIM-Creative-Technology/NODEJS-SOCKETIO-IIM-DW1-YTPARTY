@@ -8,7 +8,7 @@ enum SocketEvents {
 
 export default class SocketServer {
   server: httpServer;
-  io : Server;
+  io: Server;
 
   constructor(server: httpServer) {
     this.server = server;
