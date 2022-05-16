@@ -1,0 +1,22 @@
+{
+  "name": "youtube-party",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/IIM-Creative-Technology/NODEJS-SOCKETIO-IIM-DW1-YTPARTY.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/IIM-Creative-Technology/NODEJS-SOCKETIO-IIM-DW1-YTPARTY/issues"
+  },
+  "homepage": "https://github.com/IIM-Creative-Technology/NODEJS-SOCKETIO-IIM-DW1-YTPARTY#readme",
+  "dependencies": {
+    "dotenv": "^16.0.1"
+  }
+}
