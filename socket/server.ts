@@ -1,4 +1,4 @@
-import {createServer, Server as httpServer} from "http";
+import { Server as httpServer } from "http";
 import { Server, Socket } from "socket.io";
 
 enum SocketEvents {
@@ -9,33 +9,19 @@ enum SocketEvents {
 export default class SocketServer {
   server: httpServer;
   io : Server;
-  port: number;
 
-  constructor(port: number) {
-    this.server = createServer();
+  constructor(server: httpServer) {
+    this.server = server;
     this.io = new Server(this.server);
-    this.port = port;
-  }
-
-  listen() {
-    this.server.listen(this.port, () => {
-      console.log(`Server is listening on port ${this.port}`);
-    });
-
-    this.handleEvents();
   }
 
   handleEvents() {
+    console.log("Socket server is running");
     this.io.on(SocketEvents.CONNECTION, (socket: Socket) => {
       console.log("Client connected");
 
       socket.on(SocketEvents.DISCONNECT, () => {
         console.log("Client disconnected");
-      });
-
-      socket.on(SocketEvents.MESSAGE, (message) => {
-        console.log(message);
-        this.io.emit("message", message);
       });
     });
   }

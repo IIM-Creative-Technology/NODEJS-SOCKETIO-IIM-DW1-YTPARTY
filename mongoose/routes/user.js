@@ -4,7 +4,7 @@ const bcrypt = require("bcryptjs");
 const router = express.Router();
 const User = require("../models/user");
 
-router.get("/sign-up", async (req, res) => {
+router.post("/sign-up", async (req, res) => {
     const {
         first_name,
         last_name,
